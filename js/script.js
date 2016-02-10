@@ -8,7 +8,7 @@ angular.module('myApp', []).controller('usersController', ['$scope', function($s
     ]
 
     /**
-     * Add form if valid
+     * Add users if form is valid
      * @param firstName
      * @param lastName
      * @param email
