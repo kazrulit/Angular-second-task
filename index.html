@@ -15,31 +15,24 @@
 </head>
 
 <body ng-app="myApp">
-<!-- HEADER AND NAVBAR -->
-<header>
-    <nav class="navbar navbar-default">
-        <div class="container">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="/">EPAM Grill Party</a>
-            </div>
-            <ul class="nav navbar-nav navbar-right">
-                <li class="active">
-                    <a href="#">
-                        <i class="fa fa-home"></i> Home
-
-                    </a>
-                </li>
-                <li>
-                    <a href="#about">
-                        <i class="fa fa-shield"></i> Register </a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-</header>
 <!-- HOME PAGE -->
 <div class="container-fluid" ng-controller="usersController">
 
+    <div class="container">
+        <form action="" class="form-horizontal">
+            <div class="form-group search-block">
+                <div class="col-md-2 col-md-offset-3">
+                    <input type="text" placeholder="Search.." class="form-control" ng-model="searchInput">
+                </div>
+                <div class="col-md-2">
+                    <select class="form-control" ng-model="searchOrder">
+                        <option value="firstName">First name</option>
+                        <option value="attendStatus">Attend Status</option>
+                    </select>
+                </div>
+            </div>
+        </form>
+    </div>
 
     <div class="container">
         <div class="col-md-6 col-md-offset-3">
@@ -50,7 +43,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-sm-4" ng-repeat="user in users">
+                    <div class="col-sm-4" ng-repeat="user in users | filter : searchInput | orderBy: searchOrder">
                         <div class="well">
                             <p class="text-center"><span class="glyphicon glyphicon-user"></span></p>
                             <h4><span ng-bind="user.firstName"></span> <span ng-bind="user.lastName"></span></h4>
