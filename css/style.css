@@ -1,0 +1,9 @@
+/* Styles go here */
+
+.glyphicon.glyphicon-user{
+    font-size:70px;
+}
+
+.error-block {
+    padding-top: 10px;
+}
