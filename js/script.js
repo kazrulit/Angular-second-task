@@ -17,7 +17,6 @@ angular.module('myApp', []).controller('usersController', ['$scope', function($s
     $scope.addUser = function(firstName, lastName, email, status) {
         if($scope.form.$valid) {
             $scope.users.push({firstName: firstName, lastName: lastName, attendStatus: status});
-            console.log($scope.users);
         }
     }
 }]);
